@@ -15,7 +15,7 @@ db = client.get_default_database()
 @app.route('/data')
 def home_api():
     measures = []
-    for m in db.arduino.find({}).limit(50):
+    for m in db.arduino.find({}):
         measures.append({
             'fecha': m['date'].strftime("%Y-%m-%d %H:%M:%S"),
             'temperatura': float(m['temperatura']),
