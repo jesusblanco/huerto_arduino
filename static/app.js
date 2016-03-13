@@ -3,6 +3,9 @@ $(function () {
     title:{
       text: "Huerto Arduino"
     },
+    xAxis:{
+      type: 'datetime',
+    },
     yAxis:{
       title: {
         text:'Temperatura (°C)'
@@ -17,6 +20,9 @@ $(function () {
   var optionsHum = {
     title:{
       text: ""
+    },
+    xAxis:{
+      type: 'datetime',
     },
     yAxis:{
       title: {
@@ -33,6 +39,9 @@ $(function () {
     title:{
       text: ""
     },
+    xAxis:{
+      type: 'datetime',
+    },
     yAxis:{
       title: {
         text:'Humedad Suelo'
@@ -48,11 +57,15 @@ $(function () {
     var arrTemp = [];
     var arrHum = [];
     var arrSuelo = [];
+    var fecha;
 
     for (var i = 0; i < data.measures.length; i++) {
-      arrTemp.push([data.measures[i].fecha, data.measures[i].temperatura]);
-      arrHum.push([data.measures[i].fecha, data.measures[i].humedad]);
-      arrSuelo.push([data.measures[i].fecha, data.measures[i].h_suelo]);
+
+      fecha = moment(data.measures[i].fecha).valueOf();
+
+      arrTemp.push([fecha, data.measures[i].temperatura]);
+      arrHum.push([fecha, data.measures[i].humedad]);
+      arrSuelo.push([fecha, data.measures[i].h_suelo]);
     }
 
     optionsTemp.series[0].data = arrTemp;
