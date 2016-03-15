@@ -8,10 +8,18 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
   </head>
   <body>
     <div id="container-temperatura" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     <div id="container-humedad" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     <div id="container-suelo" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    <footer>
+        <p>
+            Datos extra&iacute;dos desde un Arduino con sensores. <a href="https://github.com/jesusblanco/huerto_arduino"> C&oacute;digo disponible en github.</a>
+            <br />
+            Vi&ntilde;a del Mar, Chile. 2016.
+        </p>
+    </footer>
   </body>
 </html>
