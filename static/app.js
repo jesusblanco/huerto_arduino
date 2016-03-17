@@ -52,6 +52,15 @@ $(function () {
     },
     series: [{}]
   };
+
+  Highcharts.setOptions({
+      global: {
+          timezoneOffset: 6 * 60
+      }
+  });
+
+
+
   $.getJSON('/data', function(data){
 
     var arrTemp = [];
